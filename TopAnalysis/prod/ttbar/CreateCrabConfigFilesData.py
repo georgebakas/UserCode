@@ -5,24 +5,25 @@ crabSubmitFile.write("#!/bin/tcsh\n")
 
 SAMPLES = [
   "/JetHT/Run2016B-03Feb2017_ver1-v1/MINIAOD",
-  "/JetHT/Run2016B-03Feb2017_ver2-v2/MINIAOD",
   "/JetHT/Run2016C-03Feb2017-v1/MINIAOD",
   "/JetHT/Run2016D-03Feb2017-v1/MINIAOD",
   "/JetHT/Run2016E-03Feb2017-v1/MINIAOD",
   "/JetHT/Run2016F-03Feb2017-v1/MINIAOD",
-  "/JetHT/Run2016G-03Feb2017-v1/MINIAOD",
-  "/JetHT/Run2016H-03Feb2017_ver2-v1/MINIAOD",
-  "/JetHT/Run2016H-03Feb2017_ver3-v1/MINIAOD",
-  "/SingleMuon/Run2016B-03Feb2017_ver1-v1/MINIAOD",
-  "/SingleMuon/Run2016B-03Feb2017_ver2-v2/MINIAOD",
-  "/SingleMuon/Run2016C-03Feb2017-v1/MINIAOD",
-  "/SingleMuon/Run2016D-03Feb2017-v1/MINIAOD",
-  "/SingleMuon/Run2016E-03Feb2017-v1/MINIAOD",
-  "/SingleMuon/Run2016F-03Feb2017-v1/MINIAOD",
-  "/SingleMuon/Run2016G-03Feb2017-v1/MINIAOD",                                                                                               
-  "/SingleMuon/Run2016H-03Feb2017_ver2-v1/MINIAOD",                                                                                          
-  "/SingleMuon/Run2016H-03Feb2017_ver3-v1/MINIAOD"
-]
+  "/JetHT/Run2016G-03Feb2017-v1/MINIAOD", 
+ ]
+ # "/JetHT/Run2016B-03Feb2017_ver2-v2/MINIAOD"
+ # "/JetHT/Run2016H-03Feb2017_ver2-v1/MINIAOD",
+ # "/JetHT/Run2016H-03Feb2017_ver3-v1/MINIAOD",
+ # "/SingleMuon/Run2016B-03Feb2017_ver1-v1/MINIAOD",
+ # "/SingleMuon/Run2016B-03Feb2017_ver2-v2/MINIAOD",
+ # "/SingleMuon/Run2016C-03Feb2017-v1/MINIAOD",
+ # "/SingleMuon/Run2016D-03Feb2017-v1/MINIAOD",
+ # "/SingleMuon/Run2016E-03Feb2017-v1/MINIAOD",
+ # "/SingleMuon/Run2016F-03Feb2017-v1/MINIAOD",
+ # "/SingleMuon/Run2016G-03Feb2017-v1/MINIAOD",                                                                                               
+ # "/SingleMuon/Run2016H-03Feb2017_ver2-v1/MINIAOD",                                                                                          
+ # "/SingleMuon/Run2016H-03Feb2017_ver3-v1/MINIAOD"
+#]
 
 for ss in SAMPLES:
   tag1 = (ss.split("/")[1]).replace("/","")
@@ -51,8 +52,8 @@ for ss in SAMPLES:
   file.write("config.Data.inputDBS = \'global\'\n")
   file.write("config.Data.splitting = \'LumiBased\'\n")
   file.write("config.Data.unitsPerJob = 50\n")
-  file.write("config.Data.lumiMask = \'Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt\'\n")
-  file.write("config.Data.outLFNDirBase = \'/store/group/cmst3/user/kkousour/ttbar/\'\n")
+  file.write("config.Data.lumiMask = \'https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/ReReco/Final/Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt\'\n")
+  file.write("config.Data.outLFNDirBase = \'/store/user/gbakas/ttbar/\'\n")
   file.write("config.Data.publication = False\n")
   file.write("config.Site.storageSite = \'T2_CH_CERN\'\n")
   file.close()
